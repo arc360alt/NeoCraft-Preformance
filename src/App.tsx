@@ -4,6 +4,7 @@ import BackButton from "./components/BackButton";
 import SiteBanner from "./components/SiteBanner";
 import Panel from "./components/Panel";
 import Modal from "./components/Modal";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Downloads from "./pages/Downloads";
 import Performance from "./pages/Performance";
@@ -84,6 +85,8 @@ function App() {
 					<OtherProjects />
 				</Panel>
 			</div>
+
+			<Footer />
 
 			{showRebrandNotice && (
 				<Modal

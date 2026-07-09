@@ -58,6 +58,27 @@ button.normal {
 	opacity: 0.8;
 }
 
+/* ---------- footer ---------- */
+
+.site-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+	width: 100%;
+	max-width: 900px;
+	flex-shrink: 0;
+	margin-top: 16px;
+	padding-top: 12px;
+	border-top: 2px solid #5b5b5b;
+	text-align: center;
+	font-size: 13px;
+}
+
+.footer-disclaimer {
+	color: #ffffff99;
+}
+
 /* ---------- app shell / layout ---------- */
 
 .app-shell {
