@@ -264,6 +264,11 @@ button.renderer-btn {
 button.renderer-btn:is(:hover, :focus) {
 	background-color: #b2b2b2;
 }
+button.renderer-btn:active {
+	margin-top: 4px;
+	height: 44px;
+	box-shadow: inset 3px 3px #fffc, inset -3px -3px #fff3;
+}
 button.renderer-btn.active {
 	background-color: #7345e5;
 	color: #fff;
