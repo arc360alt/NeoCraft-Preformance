@@ -1,0 +1,542 @@
+/* our layouts use flex `gap` for spacing instead of the legacy inline margins */
+button.normal {
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+/* ---------- pixelated stepped-corner mask (fixed px, so it doesn't eat
+   proportionally more of small elements than large ones) ---------- */
+
+.pixel-clip {
+	clip-path: polygon(
+		var(--corner) 0, calc(100% - var(--corner)) 0,
+		calc(100% - var(--corner)) var(--corner), 100% var(--corner),
+		100% calc(100% - var(--corner)), calc(100% - var(--corner)) calc(100% - var(--corner)),
+		calc(100% - var(--corner)) 100%, var(--corner) 100%,
+		var(--corner) calc(100% - var(--corner)), 0 calc(100% - var(--corner)),
+		0 var(--corner), var(--corner) var(--corner)
+	);
+}
+
+/* A regular `border` gets cut off at the clip-path notches instead of
+   tracing them (clip-path clips whatever was painted along the original
+   rectangular edge — it doesn't repaint a border along the new outline).
+   So instead of a border, these are two genuinely nested elements: an
+   outer "frame" (solid color, larger --corner) with the inner content
+   inset by the frame's own padding (smaller --corner) sitting on top of
+   it — real DOM stacking, not z-index tricks, so it can't paint over
+   the content by accident. */
+.pixel-frame {
+	--frame-width: 2px;
+	--frame-color: #1e1e1f;
+	padding: var(--frame-width);
+	background-color: var(--frame-color);
+}
+
+/* ---------- site banner ---------- */
+
+.site-banner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+	height: auto;
+	padding: 10px 16px;
+	border: none;
+	border-bottom: 2px solid #4a1cac;
+	background-color: #7345e5;
+	box-shadow: inset 0 -4px #4a1cac, inset 3px 3px #fff3, inset -3px -7px #ffffff1a;
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 28px;
+}
+.site-banner:is(:hover, :focus) {
+	background-color: #5d2cc6;
+}
+.site-banner-arrow {
+	opacity: 0.8;
+}
+
+/* ---------- app shell / layout ---------- */
+
+.app-shell {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100%;
+	padding: 20px 16px;
+}
+
+.header-area {
+	width: 100%;
+	max-width: 900px;
+	display: flex;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+/* sized to the logo's own responsive width (not header-area's, which is
+   wider and just there to center things) — splash-text is positioned
+   relative to this, so it stays pinned to the logo's actual corner
+   instead of drifting toward header-area's edge on wide screens. */
+.logo-wrap {
+	position: relative;
+	width: min(480px, 80%);
+}
+
+.logo-img {
+	display: block;
+	width: 100%;
+	height: auto;
+	image-rendering: pixelated;
+	user-select: none;
+	pointer-events: none;
+}
+
+.splash-text {
+	position: absolute;
+	right: -18%;
+	bottom: -6px;
+	transform: rotate(-14deg);
+	color: #ffff00;
+	font-family: "Minecraft Ten v2", "Noto Sans";
+	font-size: 18px;
+	text-shadow: 2px 2px 0 #3f3f00;
+	animation: splash-bounce 0.7s infinite alternate;
+	pointer-events: none;
+	white-space: nowrap;
+}
+
+@keyframes splash-bounce {
+	from {
+		transform: rotate(-14deg) scale(1);
+	}
+	to {
+		transform: rotate(-14deg) scale(1.12);
+	}
+}
+
+/* ---------- sliding stage ---------- */
+
+.stage {
+	position: relative;
+	width: 100%;
+	max-width: 900px;
+	flex: 1;
+	min-height: 320px;
+	overflow: hidden;
+	margin-top: 24px;
+}
+
+/* .panel only ever animates transform/opacity; the actual scrolling content
+   lives in .panel-inner. Keeping the animated element and the scrolling
+   element separate avoids transform-vs-scroll/reflow interaction glitches. */
+.panel {
+	position: absolute;
+	inset: 0;
+	transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.55s ease;
+}
+
+.panel-inner {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 8px 4px 40px;
+}
+
+.panel-inner-home {
+	justify-content: center;
+}
+
+/* `overflow-y: auto` on a flex column removes children's automatic min-size
+   protection, so on tall pages they get squashed instead of the container
+   simply scrolling. Force every direct child to keep its natural size. */
+.panel-inner > * {
+	flex-shrink: 0;
+}
+
+.panel-active {
+	transform: translateX(0);
+	opacity: 1;
+	pointer-events: auto;
+}
+.panel-left {
+	transform: translateX(-115%);
+	opacity: 0;
+	pointer-events: none;
+}
+.panel-right {
+	transform: translateX(115%);
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* ---------- home menu ---------- */
+
+.home-menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 32px;
+}
+
+button.normal.wide {
+	margin-bottom: 10px;
+}
+
+/* ---------- back button ---------- */
+
+.back-btn {
+	align-self: flex-start;
+	margin-bottom: 16px;
+}
+
+/* ---------- generic page content ---------- */
+
+.page-content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+.page-content.center {
+	align-items: center;
+	text-align: center;
+}
+
+.chart-title {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+/* ---------- downloads: renderer bar ---------- */
+
+.renderer-bar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	width: 100%;
+	margin-bottom: 12px;
+}
+
+button.renderer-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: auto;
+	height: 48px;
+	padding: 6px 16px;
+	background-color: #d0d1d4;
+	border: 2px solid #1e1e1f;
+	box-shadow: inset 0 -4px #58585a, inset 3px 3px #fff3, inset -3px -7px #ffffff1a;
+	color: #1e1e1f;
+	font-size: 18px;
+}
+button.renderer-btn:is(:hover, :focus) {
+	background-color: #b2b2b2;
+}
+button.renderer-btn.active {
+	background-color: #7345e5;
+	color: #fff;
+	box-shadow: inset 0 -4px #4a1cac, inset 3px 3px #fff3, inset -3px -7px #ffffff1a;
+}
+
+.renderer-icon {
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+	image-rendering: pixelated;
+	display: block;
+	flex-shrink: 0;
+}
+
+.renderer-description {
+	margin-bottom: 12px;
+	opacity: 0.85;
+}
+
+/* ---------- downloads: version list ---------- */
+
+.version-list {
+	justify-content: flex-start;
+	width: 100%;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+button.normal.version-btn.discontinued {
+	color: #c63636;
+}
+
+button.normal.version-btn.beta {
+	color: #368FC6;
+}
+
+.version-warn-icon,
+.version-beta-icon {
+	width: 16px;
+	height: 16px;
+	margin-left: 6px;
+	vertical-align: -3px;
+	image-rendering: pixelated;
+}
+
+/* ---------- downloads: download panel ---------- */
+
+.download-panel-frame {
+	--corner: 10px;
+	width: 100%;
+}
+
+.download-panel {
+	--corner: 8px;
+	width: 100%;
+}
+
+.download-panel-inner {
+	padding: 20px;
+	background-color: rgba(30, 30, 31, 0.35);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.download-note {
+	opacity: 0.9;
+	font-size: 16px;
+}
+
+.tag-pill {
+	display: inline-block;
+	padding: 2px 10px;
+	font-size: 14px;
+	color: #1e1e1f;
+	border: 2px solid #1e1e1f;
+	margin-bottom: 4px;
+}
+
+/* ---------- modal ---------- */
+
+.modal-mask {
+	position: fixed;
+	inset: 0;
+	background-color: #000000b3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 20;
+}
+
+.modal-box {
+	width: min(480px, 90%);
+	background-color: #313233;
+	border: 2px solid #1e1e1f;
+	max-height: 80%;
+	overflow-y: auto;
+}
+
+.modal-banner {
+	display: block;
+	width: 100%;
+	height: 130px;
+	object-fit: contain;
+	image-rendering: pixelated;
+	background-color: #1e1e1f;
+	border-bottom: 2px solid #1e1e1f;
+}
+
+.modal-content {
+	padding: 16px;
+}
+
+.modal-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+}
+
+.modal-body ul {
+	padding-left: 20px;
+}
+
+.modal-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 16px;
+}
+
+/* ---------- performance page ---------- */
+
+.perf-chart {
+	width: 100%;
+}
+
+.perf-row {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 10px;
+}
+
+.perf-label {
+	width: 110px;
+	flex-shrink: 0;
+	font-size: 16px;
+}
+
+.perf-bar-track {
+	flex: 1;
+	height: 22px;
+	background-color: #1e1e1f;
+	border: 2px solid #000;
+	box-shadow: inset 0 3px #000;
+}
+
+.perf-bar-fill {
+	height: 100%;
+	box-shadow: inset 0 -4px #0003, inset 3px 3px #fff3;
+	transition: width 0.6s ease;
+}
+.perf-bar-fill.skyblue { background-color: #00bfff; }
+.perf-bar-fill.green { background-color: #3c8527; }
+.perf-bar-fill.yellow { background-color: #dada10; }
+.perf-bar-fill.red { background-color: #c63636; }
+.perf-bar-fill.blue { background-color: #7345e5; }
+
+.perf-value {
+	width: 90px;
+	flex-shrink: 0;
+	text-align: right;
+	font-size: 16px;
+}
+
+.perf-notes {
+	padding-left: 20px;
+	margin: 0;
+}
+.perf-notes li {
+	margin-bottom: 6px;
+}
+
+/* ---------- news page ---------- */
+
+button.normal.news-card {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	text-align: left;
+	margin-bottom: 10px;
+	padding: 14px 16px;
+	white-space: normal;
+}
+
+.news-card-top {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 6px;
+}
+
+.news-date {
+	font-size: 14px;
+	opacity: 0.7;
+}
+
+.news-title {
+	font-size: 20px;
+	margin: 0 0 6px;
+}
+
+.news-summary {
+	font-size: 16px;
+	opacity: 0.9;
+	margin: 0;
+}
+
+.news-article {
+	width: 100%;
+	border: 2px solid #1e1e1f;
+}
+
+.article-banner {
+	display: block;
+	width: 100%;
+	height: 180px;
+	object-fit: contain;
+	image-rendering: pixelated;
+	background-color: #1e1e1f;
+	border-bottom: 2px solid #1e1e1f;
+}
+
+.news-article-content {
+	padding: 16px;
+	background-color: rgba(30, 30, 31, 0.75);
+}
+
+button.normal.all-news-btn {
+	margin-bottom: 20px;
+}
+
+.news-body {
+	white-space: pre-wrap;
+	line-height: 1.5;
+}
+
+/* ---------- other projects ---------- */
+
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 12px;
+	width: 100%;
+}
+
+button.normal.project-card {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	text-align: left;
+	padding: 0;
+	white-space: normal;
+	overflow: hidden;
+}
+
+.project-banner {
+	display: block;
+	width: 100%;
+	height: 110px;
+	object-fit: cover;
+	image-rendering: pixelated;
+	background-color: #1e1e1f;
+	border-bottom: 2px solid #1e1e1f;
+}
+
+.project-card-content {
+	padding: 12px 14px;
+}
+
+.project-name {
+	font-size: 18px;
+	margin: 0 0 6px;
+}
+
+.project-description {
+	font-size: 14px;
+	opacity: 0.85;
+	margin: 0;
+}
