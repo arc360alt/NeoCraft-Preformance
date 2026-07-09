@@ -30,8 +30,15 @@ export default function DownloadPanel({
 					{!version.supported && (
 						<div className="tag-pill" style={{ backgroundColor: "#c63636" }}>Discontinued</div>
 					)}
-					<Btn className="normal blue" onClick={onDownloadClick}>
-						Download
+					{!version.url && (
+						<div className="tag-pill" style={{ backgroundColor: "#8c8d90" }}>Coming Soon</div>
+					)}
+					<Btn
+						className={version.url ? "normal blue" : "normal disabled"}
+						disabled={!version.url}
+						onClick={onDownloadClick}
+					>
+						{version.url ? "Download" : "Coming Soon"}
 					</Btn>
 					{version.note && <p className="download-note">{version.note}</p>}
 				</div>

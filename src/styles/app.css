@@ -315,6 +315,14 @@ button.normal.version-btn.beta {
 	image-rendering: pixelated;
 }
 
+button.normal.version-btn.coming-soon {
+	color: #8c8d90;
+}
+
+.version-coming-soon-label {
+	font-size: 14px;
+}
+
 /* ---------- downloads: download panel ---------- */
 
 .download-panel-frame {

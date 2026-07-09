@@ -1,0 +1,319 @@
+{
+  "categories": {
+    "Sodium": {
+      "icon": "https://cdn.modrinth.com/data/AANobbMI/295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
+      "description": "The standard high-performance renderer. Best for most players.",
+      "versions": [
+        {
+          "label": "26.2",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/sodium-modupdate-262/OptiArk-sodium-26.2-MC26.2.mrpack",
+          "supported": true,
+          "note": null,
+          "beta": true,
+          "unsupportedMods": ["Krypton", "Iris due to incompatibility with Sodium Beta 4"]
+        },
+        {
+          "label": "26.1.2",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.5.1-ksyxis/OptiArk-sodium-26.1.2.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "26.1.1",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.5.1/OptiArk-sodium-26.1.1.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "26.1",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.5.0/OptiArk-sodium-26.1.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "1.21.11",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.4.0/OptiArk-sodium-1.21.11.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "1.21.10",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.Sodium.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.9",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.Sodium.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.8",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.8.1.8.Sodium.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.7",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.7.1.8.Sodium.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.6",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.6.1.8.Sodium.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.5",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.5.1.8.Sodium.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.4",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.4.1.8.Sodium.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.20.1",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.Sodium.zip",
+          "supported": false,
+          "note": null
+        }
+      ]
+    },
+    "VulkanMod": {
+      "icon": "https://cdn.modrinth.com/data/JYQhtZtO/2b37b630b4be3c92101ddb500c628def9b57ea3d_96.webp",
+      "description": "Vulkan-based renderer. Experimental but can boost performance on supported GPUs.",
+      "versions": [
+        {
+          "label": "26.2",
+          "url": "",
+          "supported": true,
+          "note": "If you have issues starting the game, add JVM argument: -Dorg.lwjgl.system.stackSize=256"
+        },
+        {
+          "label": "26.1.2",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.5.1-ksyxis/OptiArk-vulkanmod-26.1.2.mrpack",
+          "supported": true,
+          "note": "If you have issues starting the game, add JVM argument: -Dorg.lwjgl.system.stackSize=256"
+        },
+        {
+          "label": "26.1.1",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/vulkanmod-26.1-versions/OptiArk-vulkanmod-26.1.1.mrpack",
+          "supported": true,
+          "note": "If you have issues starting the game, add JVM argument: -Dorg.lwjgl.system.stackSize=256"
+        },
+        {
+          "label": "26.1",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/vulkanmod-26.1-versions/OptiArk-vulkanmod-26.1.mrpack",
+          "supported": true,
+          "note": "This verison has not been released and probably will never be, only 26.1.1 is going to be officaly supported."
+        },
+        {
+          "label": "1.21.11",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.5.0-26.1.2support/OptiArk-vulkanmod-1.21.11.mrpack",
+          "supported": true,
+          "note": "If you have issues starting the game, add JVM argument: -Dorg.lwjgl.system.stackSize=256"
+        },
+        {
+          "label": "1.21.10",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.VK.zip",
+          "supported": false,
+          "note": "If you have issues starting the game, add JVM argument: -Dorg.lwjgl.system.stackSize=256"
+        },
+        {
+          "label": "1.21.9",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.VK.zip",
+          "supported": false,
+          "note": "If you have issues starting the game, add JVM argument: -Dorg.lwjgl.system.stackSize=256"
+        },
+        {
+          "label": "1.21.5",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.5.1.8.VK.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.4",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.4.1.8.VK.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.20.1",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.VK.zip",
+          "supported": false,
+          "note": null
+        }
+      ]
+    },
+    "Nividium": {
+      "icon": "https://cdn.modrinth.com/data/SfMw2IZN/2db76d464a0f67cdb9e30fd99040eb096ac62016_96.webp",
+      "description": "NVIDIA-exclusive renderer built on top of Sodium. Requires an NVIDIA GPU.",
+      "versions": [
+        {
+          "label": "26.2",
+          "url": "",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "26.1.2",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.5.1-ksyxis/OptiArk-nvidium-26.1.2.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "26.1.1",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.5.1/OptiArk-nvidium-26.1.1.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "26.1",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.5.0/OptiArk-nvidium-26.1.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "1.21.11",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.4.0/OptiArk-nvidium-1.21.11.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "1.21.10",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.NV.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.9",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.NV.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.8",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.8.1.8.NV.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.7",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.7.1.8.NV.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.6",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.6.1.8.NV.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.5",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.5.1.8.NV.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.21.4",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.4.1.8.NV.zip",
+          "supported": false,
+          "note": null
+        },
+        {
+          "label": "1.20.1",
+          "url": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.NV.zip",
+          "supported": false,
+          "note": null
+        }
+      ]
+    },
+    "Embeddium": {
+      "icon": "https://cdn.modrinth.com/data/sk9rgfiA/55f9c50284f8abbbe2a485abfd6a16209201e451_96.webp",
+      "description": "Forge-compatible renderer based on Sodium. For Forge modpacks.",
+      "versions": [
+        {
+          "label": "1.20.1",
+          "url": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7/OptiArk.1.20.1.1.7.EB.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "1.19.4",
+          "url": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.19.4.1.8.EB.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "1.18.2",
+          "url": "https://github.com/arc360alt/optiark-website/releases/download/old/OptiArk.1.18.2.1.8.EB.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "1.16.5",
+          "url": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7/OptiArk.1.16.5.1.7.EB.mrpack",
+          "supported": true,
+          "note": null
+        }
+      ]
+    },
+    "Other": {
+      "icon": "https://avatars.githubusercontent.com/u/69833574?s=280&v=4",
+      "description": "Legacy versions and OptiFine builds for older Minecraft versions.",
+      "versions": [
+        {
+          "label": "1.8.9 OptiFine",
+          "url": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.8.9.1.7.OptiFine.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "1.12.2 Sodium",
+          "url": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.Sodium.mrpack",
+          "supported": true,
+          "note": null
+        },
+        {
+          "label": "1.12.2 OptiFine",
+          "url": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.OptiFine.mrpack",
+          "supported": true,
+          "note": null
+        }
+      ]
+    }
+  },
+  "versionBackgrounds": {
+    "26.2": "https://www.minecraft.net/content/dam/minecraftnet/article-asset/2026/minecraft-26-2/new-article-hero-image.jpg",
+    "26.1.2": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/26.1.2-1170x500.jpg",
+    "26.1.1": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/26-1-1_1170x500.jpg",
+    "26.1": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/26.1_1170x500.jpg",
+    "1.21.11": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_MountsOfMayhem_Launch_editorial_1170x500.jpg",
+    "1.21.10": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.10%201170x500.jpg",
+    "1.21.9": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.9_1170x500.jpg",
+    "1.21.8": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.8%201170x500.jpg",
+    "1.21.7": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg",
+    "1.21.6": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.6_1170x500.jpg",
+    "1.21.5": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.5_1170x500.jpg",
+    "1.21.4": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.4_1170x500.jpg",
+    "1.20.1": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.20.1%201170x500.jpg",
+    "1.19.4": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1_19_4_release_header.jpg",
+    "1.18.2": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1-18-2-release-header.jpg",
+    "1.16.5": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/nether-header.jpg",
+    "1.12.2": "https://www.minecraft.net/content/dam/minecraftnet/archive/be692329014b85620ad11631650c1f91-Header.png",
+    "1.8.9": "https://minecraft.wiki/images/thumb/Java_Edition_1.8.9.png/800px-Java_Edition_1.8.9.png?3d88b"
+  },
+  "banner": {
+    "message": "26.2 Support is out! (Sodium only)",
+    "link": "/news/chaos-cubed",
+    "active": true
+  }
+}

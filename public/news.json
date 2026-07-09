@@ -1,0 +1,74 @@
+[
+  {
+    "id": "optiark-rewrite-2026",
+    "date": "2026-03-29",
+    "title": "Welcome to the new OptiArk Website!",
+    "tag": "Major Update",
+    "tagColor": "green",
+    "summary": "The OptiArk Website has been rewriten in Astro for better preformance and simpler UI!",
+    "body": "The old OptiArk website was quite frankly slow, laggy, and just overall not good, so we decided to rebuild it in a new framework called Astro. This new website is much faster, more simple for users to navigate, and just overall better than the old one. We hope you enjoy the new website as much as we do!"
+  },
+  {
+    "id": "optiark-rewrite-2026-2",
+    "date": "2026-04-02",
+    "title": "This project is getting priority!",
+    "tag": "Update",
+    "tagColor": "orange",
+    "summary": "The OptiArk Project is getting priority over all my other projects!",
+    "body": "As of a few days ago, I cancled one of my biggest and most anoying to work on projects, ArkIDE, So that means I can now focus more time on working on this modpack!! Exciting."
+  },
+  {
+    "id": "26-1-1-support",
+    "date": "2026-04-02",
+    "title": "Sodium 26.1.1 Support Released!",
+    "tag": "Update",
+    "tagColor": "orange",
+    "summary": "Sodium 26.1.1 is now officially supported in OptiArk!",
+    "body": "Sodium 26.1.1 is now officially supported in OptiArk! You can now download 26.1.1 versions now. Vulkanmod is not supported yet and there is no mention of when it will be supported for 26.1.1 at this time."
+  },
+  {
+    "id": "26-1-2-support",
+    "date": "2026-04-11",
+    "title": "Sodium 26.1.2 Support Released!",
+    "tag": "Update",
+    "tagColor": "orange",
+    "summary": "Sodium 26.1.2 is now officially supported in OptiArk!",
+    "body": "No discription needed, 26.1.2 support released."
+  },
+  {
+    "id": "vk-support",
+    "date": "2026-04-15",
+    "title": "Vulkanmod 26.1, 26.1.1, and 26.1.2 support is FINNALY here.",
+    "tag": "Update",
+    "tagColor": "orange",
+    "summary": "The title explains it all.",
+    "body": "Well here we are, we finnaly have support for all 3 of these versions after a pretty long time, have fun, and also if you want shaders on Vulkanmod install the Beryl mod on Modrinth!"
+  },
+  {
+    "id": "newver-upd",
+    "date": "2026-05-17",
+    "title": "What will happen when 26.2 releases?",
+    "tag": "Update",
+    "tagColor": "orange",
+    "summary": "This article exlpains what will happen to this modpack when the big 26.2 release comes out.",
+    "body": "With the new 26.2 minecraft update coming with Vulkan Graphics baked in, nobody knows yet what will happen with all of our favorite preformance mods that rely on OpenGL, but I will still continue to work on this pack as there are preformance increases to be made even with this new vulkan renderer minecraft has put in place. As vulkanmod on 26.1.2 gets more FPS than vulkan on 26.2, so there are preformance mods to be made for this, but nobody knows yet, ill try my best to keep this pack going though. Thanks for using OptiArk!"
+  },
+  {
+    "id": "chaos-cubed",
+    "date": "2026-06-18",
+    "title": "26.2 Sodium Relseaed",
+    "tag": "Update",
+    "tagColor": "orange",
+    "summary": "The name says it all.",
+    "body": "Sodium 26.2 has been released, vulkanmod and nvidium might be coming later, nvidium is most likley going to be coming but vulkanmod probably not."
+  },
+  {
+    "id": "new-website-again",
+    "date": "2026-07-09",
+    "title": "Welcome to the bran new NeoCraft website, with a rebrand too!",
+    "tag": "Major Update",
+    "tagColor": "green",
+    "summary": "The NeoCraft website has been rewritten in Typescript and react with a more minecraft-y look using the Ore-UI Design language.",
+    "body": "Yes, I know, this is the 3rd time we have rewritten the website, but we just cant find the best look adn feel for a website like this, but this time I think we have nailed it. This website shows almost the same amount of info as the last website, but this time its laied out completly diffrent and has a super nice minecraft looking Ore UI (This is the UI Language used on minecraft bedrock), so thats why this website just feels more minecraft, we hope you like this new website just as much as we do after working on it for a while. Also, we have rebranded the modpack to NeoCraft, this is because of a wierd consperecy theory I have, ALL of my projects that I have named ---Ark or Ark--- have failed, there are like 10 examples of this, so to free this project from that curse, I renamed it to remove the ark suffix."
+  }
+]

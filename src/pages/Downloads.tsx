@@ -34,7 +34,7 @@ export default function Downloads({
 	};
 
 	const handleDownloadClick = () => {
-		if (!version) return;
+		if (!version || !version.url) return;
 		const hasIssues = !version.supported || (version.unsupportedMods?.length ?? 0) > 0;
 		if (hasIssues) {
 			setWarnVersion(version);

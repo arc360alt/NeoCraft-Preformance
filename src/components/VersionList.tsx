@@ -17,12 +17,13 @@ export default function VersionList({
 					key={v.label}
 					className={`normal version-btn${selected?.label === v.label ? " blue" : ""}${
 						!v.supported ? " discontinued" : ""
-					}${v.beta ? " beta" : ""}`}
+					}${v.beta ? " beta" : ""}${!v.url ? " coming-soon" : ""}`}
 					onClick={() => onSelect(v)}
 				>
 					{v.label}
 					{v.beta && <img src="/oreui/res/beta-warn.png" alt="beta" className="version-beta-icon" />}
 					{!v.supported && <img src="/oreui/res/warn.png" alt="warning" className="version-warn-icon" />}
+					{!v.url && <span className="version-coming-soon-label"> (Coming Soon)</span>}
 				</Btn>
 			))}
 		</div>
