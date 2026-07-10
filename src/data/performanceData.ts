@@ -14,7 +14,7 @@ export interface PerfChart {
 
 export const perfCharts: PerfChart[] = [
 	{
-		title: "Average FPS (Render Distance 16, 1080p)",
+		title: "Average FPS (Render Distance 8 (Defualt OptiArk settings), 1440p)",
 		unit: "FPS",
 		max: 3000,
 		bars: [
