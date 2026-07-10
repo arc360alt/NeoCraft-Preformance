@@ -26,7 +26,7 @@ export const perfCharts: PerfChart[] = [
 		],
 	},
 	{
-		title: "Chunk Loading Time",
+		title: "Chunk Loading Time (Innacruate and unfinished)",
 		unit: "sec",
 		max: 30,
 		bars: [
@@ -37,7 +37,7 @@ export const perfCharts: PerfChart[] = [
 		],
 	},
 	{
-		title: "GPU Memory Usage",
+		title: "GPU Memory Usage (Innacruate and unfinished)",
 		unit: "MB",
 		max: 4096,
 		bars: [
@@ -50,6 +50,7 @@ export const perfCharts: PerfChart[] = [
 ];
 
 export const perfNotes: string[] = [
+	"Most to all preformance info on this page is unfinished and innacurate, the only one that is accurate is the FPS chart.",
 	"VulkanMod scales best on newer NVIDIA/AMD GPUs with up-to-date drivers.",
 	"Nvidium requires an NVIDIA GPU (16 series or newer).",
 	"Sodium is the BEST for most to all use cases, and with the new Vulkan mode with 26.2 provides the best performance.",
