@@ -4,6 +4,7 @@ import RendererBar from "../components/RendererBar";
 import VersionList from "../components/VersionList";
 import DownloadPanel from "../components/DownloadPanel";
 import Modal from "../components/Modal";
+import { downloadRenamed } from "../download";
 
 export default function Downloads({
 	data,
@@ -30,7 +31,7 @@ export default function Downloads({
 	};
 
 	const startDownload = (v: DownloadVersion) => {
-		window.open(v.url, "_blank");
+		downloadRenamed(v.url);
 	};
 
 	const handleDownloadClick = () => {
