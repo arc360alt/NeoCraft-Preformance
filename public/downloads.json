@@ -6,11 +6,11 @@
       "versions": [
         {
           "label": "26.2",
-          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/sodium-26.2-smallud%3Dpd/OptiArk-sodium-26.2-MC26.2.mrpack",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.4.0-fixtheversioncycle/NeoCraft-sodium-26.2.mrpack",
           "supported": true,
           "note": null,
-          "beta": true,
-          "unsupportedMods": ["Krypton"]
+          "beta": false,
+          "unsupportedMods": [""]
         },
         {
           "label": "26.1.2",
@@ -98,7 +98,7 @@
         },
         {
           "label": "26.1.2",
-          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.5.1-ksyxis/OptiArk-vulkanmod-26.1.2.mrpack",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.4.0-fixtheversioncycle/NeoCraft-vulkanmod-26.1.2.mrpack",
           "supported": true,
           "note": "If you have issues starting the game, add JVM argument: -Dorg.lwjgl.system.stackSize=256"
         },
@@ -158,9 +158,9 @@
       "versions": [
         {
           "label": "26.2",
-          "url": "",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.4.0-fixtheversioncycle/NeoCraft-nvidium-26.2.mrpack",
           "supported": true,
-          "note": null
+          "note": "The Vulkan graphics mode is unsupported on this release with Nvidium enabled."
         },
         {
           "label": "26.1.2",
