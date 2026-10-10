@@ -5,12 +5,18 @@
       "description": "The standard high-performance renderer. Best for most players.",
       "versions": [
         {
+          "label": "26.3",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v26.3-patch3/OptiArk-sodium-26.3.mrpack",
+          "supported": true,
+          "note": null,
+          "beta": false
+        },
+        {
           "label": "26.2",
           "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.4.0-fixtheversioncycle/NeoCraft-sodium-26.2.mrpack",
           "supported": true,
           "note": null,
-          "beta": false,
-          "unsupportedMods": [""]
+          "beta": false
         },
         {
           "label": "26.1.2",
@@ -156,6 +162,12 @@
       "icon": "https://cdn.modrinth.com/data/SfMw2IZN/2db76d464a0f67cdb9e30fd99040eb096ac62016_96.webp",
       "description": "NVIDIA-exclusive renderer built on top of Sodium. Requires an NVIDIA GPU.",
       "versions": [
+        {
+          "label": "26.3",
+          "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v26.3-patch3/OptiArk-nvidium-26.3.mrpack",
+          "supported": true,
+          "note": "The Vulkan graphics mode is unsupported on this release with Nvidium enabled."
+        },
         {
           "label": "26.2",
           "url": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.4.0-fixtheversioncycle/NeoCraft-nvidium-26.2.mrpack",

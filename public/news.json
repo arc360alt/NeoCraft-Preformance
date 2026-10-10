@@ -70,5 +70,14 @@
     "tagColor": "green",
     "summary": "The NeoCraft website has been rewritten in Typescript and react with a more minecraft-y look using the Ore-UI Design language.",
     "body": "Yes, I know, this is the 3rd time we have rewritten the website, but we just cant find the best look adn feel for a website like this, but this time I think we have nailed it. This website shows almost the same amount of info as the last website, but this time its laied out completly diffrent and has a super nice minecraft looking Ore UI (This is the UI Language used on minecraft bedrock), so thats why this website just feels more minecraft, we hope you like this new website just as much as we do after working on it for a while. Also, we have rebranded the modpack to NeoCraft, this is because of a wierd consperecy theory I have, ALL of my projects that I have named ---Ark or Ark--- have failed, there are like 10 examples of this, so to free this project from that curse, I renamed it to remove the ark suffix."
+  },
+  {
+    "id": "twentysix-3-support",
+    "date": "2026-07-09",
+    "title": "26.3 Support Added",
+    "tag": "Update",
+    "tagColor": "blue",
+    "summary": "NeoCraft now supports the latest 26.3 release.",
+    "body": "We are excited to announce that NeoCraft now has full support for the latest 26.3 release. This update includes several performance improvements and bug fixes to enhance your gaming experience."
   }
 ]
