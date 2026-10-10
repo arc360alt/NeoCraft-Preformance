@@ -10,21 +10,59 @@ import Downloads from "./pages/Downloads";
 import Performance from "./pages/Performance";
 import News from "./pages/News";
 import OtherProjects from "./pages/OtherProjects";
+import Launcher from "./pages/Launcher";
 import { fetchDownloads } from "./api";
 import type { DownloadsResponse } from "./types";
 
-export type Page = "home" | "downloads" | "performance" | "news" | "projects";
+export type Page = "home" | "downloads" | "performance" | "news" | "projects" | "launcher";
+
+// Pages that have their own shareable URL. Every other page lives at "/".
+const PAGE_PATHS: Partial<Record<Page, string>> = {
+	launcher: "/launcher",
+};
+
+const PAGE_TITLES: Partial<Record<Page, string>> = {
+	launcher: "NeoCraft Launcher - NeoCraft",
+};
+
+function currentPath(): string {
+	return window.location.pathname.replace(/\/+$/, "");
+}
 
 function isRedirectPath(): boolean {
-	return window.location.pathname.replace(/\/+$/, "") === "/rdir";
+	return currentPath() === "/rdir";
+}
+
+function pageFromPath(): Page {
+	const path = currentPath();
+	const match = (Object.keys(PAGE_PATHS) as Page[]).find((p) => PAGE_PATHS[p] === path);
+	return match ?? "home";
 }
 
 function App() {
-	const [page, setPage] = useState<Page>("home");
+	const [page, setPage] = useState<Page>(pageFromPath);
 	const [downloadsData, setDownloadsData] = useState<DownloadsResponse | null>(null);
 	const [downloadsError, setDownloadsError] = useState<string | null>(null);
 	const [pendingArticleId, setPendingArticleId] = useState<string | null>(null);
 	const [showRebrandNotice, setShowRebrandNotice] = useState(isRedirectPath);
+
+	useEffect(() => {
+		const onPopState = () => setPage(pageFromPath());
+		window.addEventListener("popstate", onPopState);
+		return () => window.removeEventListener("popstate", onPopState);
+	}, []);
+
+	useEffect(() => {
+		document.title = PAGE_TITLES[page] ?? "NeoCraft";
+	}, [page]);
+
+	const navigate = (target: Page) => {
+		setPage(target);
+		const path = PAGE_PATHS[target] ?? "/";
+		if (currentPath() !== path.replace(/\/+$/, "")) {
+			window.history.pushState(null, "", path);
+		}
+	};
 
 	useEffect(() => {
 		fetchDownloads()
@@ -41,7 +79,7 @@ function App() {
 
 	const openNewsArticle = (articleId: string) => {
 		setPendingArticleId(articleId);
-		setPage("news");
+		navigate("news");
 	};
 
 	const panelClass = (target: Page) => {
@@ -59,16 +97,16 @@ function App() {
 
 			<div className="stage">
 				<Panel className={panelClass("home")} innerClassName="panel-inner-home">
-					<Home onNavigate={setPage} />
+					<Home onNavigate={navigate} />
 				</Panel>
 
 				<Panel className={panelClass("downloads")}>
-					<BackButton onClick={() => setPage("home")} />
+					<BackButton onClick={() => navigate("home")} />
 					<Downloads data={downloadsData} error={downloadsError} />
 				</Panel>
 
 				<Panel className={panelClass("performance")}>
-					<BackButton onClick={() => setPage("home")} />
+					<BackButton onClick={() => navigate("home")} />
 					<Performance />
 				</Panel>
 
@@ -76,12 +114,17 @@ function App() {
 					<News
 						openArticleId={pendingArticleId}
 						onArticleOpened={() => setPendingArticleId(null)}
-						onBack={() => setPage("home")}
+						onBack={() => navigate("home")}
 					/>
 				</Panel>
 
+				<Panel className={panelClass("launcher")}>
+					<BackButton onClick={() => navigate("home")} />
+					<Launcher />
+				</Panel>
+
 				<Panel className={panelClass("projects")}>
-					<BackButton onClick={() => setPage("home")} />
+					<BackButton onClick={() => navigate("home")} />
 					<OtherProjects />
 				</Panel>
 			</div>

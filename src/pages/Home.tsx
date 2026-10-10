@@ -7,6 +7,9 @@ export default function Home({ onNavigate }: { onNavigate: (page: Page) => void 
 			<Btn className="normal wide" onClick={() => onNavigate("downloads")}>
 				Downloads
 			</Btn>
+			<Btn className="normal wide" onClick={() => onNavigate("launcher")}>
+				Launcher
+			</Btn>
 			<Btn className="normal wide" onClick={() => onNavigate("performance")}>
 				Performance Info
 			</Btn>
